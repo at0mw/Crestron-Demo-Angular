@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SwipeBladeMenuComponent } from './swipe-blade-menu/swipe-blade-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SwipeBladeMenuComponent
   ],
   imports: [
     BrowserModule,
