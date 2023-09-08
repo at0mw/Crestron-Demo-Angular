@@ -1,0 +1,38 @@
+<div class="ui-container">
+    <div class="nav-area">
+        <div class="nav-bar" [@slideDown]="navBarState" (touchstart)="resetTimer()">
+            <div class="nav-bar-button" (touchstart)="navigationButtonPressed('home')">                
+                <div class="element-icon">
+                    <mat-icon class="material-symbols">home</mat-icon>
+                </div>
+                <div class="element-text">
+                    Home
+                </div>
+            </div>
+            <div class="nav-bar-button" (touchstart)="navigationButtonPressed('lighting')">
+                <div class="element-icon">
+                    <mat-icon class="material-symbols">wb_incandescent</mat-icon>
+                </div>
+                <div class="element-text">
+                    Lighting
+                </div>
+            </div>
+            <div class="nav-bar-button" (touchstart)="navigationButtonPressed('shades')">
+                <div class="element-icon">
+                    <mat-icon class="material-symbols">blinds</mat-icon>
+                </div>
+                <div class="element-text">
+                    Shades
+                </div>
+            </div>
+            <div class="nav-bar-button" (touchstart)="navigationButtonPressed('settings')">
+                <div class="element-icon">
+                    <mat-icon class="material-symbols">settings</mat-icon>
+                </div>
+                <div class="element-text">
+                    Settings
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

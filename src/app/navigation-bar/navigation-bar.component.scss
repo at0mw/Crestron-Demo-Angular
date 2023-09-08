@@ -1,0 +1,72 @@
+@import '../../styles.scss';
+
+.nav-area {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+}
+
+.nav-bar {
+    width: 680px;
+    background-color: $surfaceColour;
+    height: 80px;
+    z-index: 5;
+    box-shadow: $onBackgroundShadow;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: transform 0.3s ease; 
+}
+
+.nav-bar-button {
+    height: 64px;
+    width: 140px;
+    box-shadow: $onForegroundShadow;
+    background-color: $primaryColour;
+    color: $onPrimaryColour;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-bar-button:active {
+    transform: scale(0.9);
+    background-color: $secondaryColour;
+    color: $onSecondaryColour;
+}
+
+.nav-bar-button .element-text {
+    font-size: medium;
+    padding: 10px;
+    padding-right: 15px; /* To account for the inner padding between text and icon */
+}
+
+.nav-bar-button .element-icon {
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    .nav-bar {
+        width: 90%;
+        height: 80px;
+    }
+
+    .nav-bar-button .element-text {
+        display: none;
+        font-size: medium;
+    }
+
+    .nav-bar-button {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+    }
+}

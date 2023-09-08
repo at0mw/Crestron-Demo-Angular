@@ -1,51 +1,18 @@
-.ui-container {
-    width: 100vw;
-    height: 100vh;
-    background-color: teal;
-}
+@import '../../styles.scss';
 
-.nav-area {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100px;
-    background-color: wheat;
+.page-blade-area {
     position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    right: 0;
-}
-
-.nav-bar {
-    width: 1000px;
-    background-color: white;
-    height: 80px;
-    z-index: 5;
-    box-shadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+    height: 100vh;
+    width: 100vw;
+    left: 0%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
 
-.nav-bar-button {
-    height: 64px;
-    width: 104px;
-    background-color: grey;
-    border-radius: 4px;
-}
-
-@media (max-width: 600px) {
-    .nav-bar {
-        width: 90%;
-        height: 60px;
-    }
-
-    .nav-bar-button {
-        height: 44px;
-        width: 44px;
-        border-radius: 50%;
-    }
+.page-blade {
+    width: 90%;
+    height: 96%;
+    background-color: $surfaceColour;
+    border-radius: 8px;
 }

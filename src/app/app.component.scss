@@ -1,0 +1,10 @@
+@import '../styles.scss';
+
+.ui-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: $backgroundColour;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
