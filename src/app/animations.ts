@@ -13,6 +13,24 @@ export const fadeOutAnimation = trigger('fadeOut', [
     state('lighting', style({ transform: 'translateX(-99%)' })),
     state('shades', style({ transform: 'translateX(-198%)' })),
     state('settings', style({ transform: 'translateX(-297%)' })),  
+    transition('settings => home', [
+    animate('1500ms ease-in-out')
+    ]),
+    transition('settings => lighting', [
+    animate('1000ms ease-in-out')
+    ]),
+    transition('home => settings', [
+    animate('1500ms ease-in-out')
+    ]),
+    transition('home => shades', [
+        animate('1000ms ease-in-out')
+    ]),
+    transition('shades => home', [
+        animate('1000ms ease-in-out')
+    ]),
+    transition('lighting => settings', [
+        animate('1000ms ease-in-out')
+    ]),
     transition('* => *', [
         animate('500ms ease-in-out')
       ])
