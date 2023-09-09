@@ -7,12 +7,14 @@ import { SwipeBladeMenuComponent } from './swipe-blade-menu/swipe-blade-menu.com
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { LightingControlsComponent } from './lighting-controls/lighting-controls.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SwipeBladeMenuComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    LightingControlsComponent
   ],
   imports: [
     BrowserModule,

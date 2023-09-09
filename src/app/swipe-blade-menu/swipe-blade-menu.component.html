@@ -1,14 +1,10 @@
-<div class="page-blade-area">
-    <div class="page-blade" *ngIf="selectedDestination === 'home'">   
-        Home     
-    </div>    
-    <div class="page-blade" *ngIf="selectedDestination === 'lighting'">   
-        Lighting     
-    </div>
-    <div class="page-blade" *ngIf="selectedDestination === 'shades'">   
-        Shades     
-    </div>
-    <div class="page-blade" *ngIf="selectedDestination === 'settings'">   
-        Settings     
-    </div>
+<div class="page-blade-area" [@positionAnimation]="currentPosition" #pageBladeArea>
+  <!-- <div class="page-blade" *ngIf="selectedDestination === 'home'" [@leaveAnimation]="animationDirection"><h1>Home</h1></div>
+  <div class="page-blade" *ngIf="selectedDestination === 'lighting'" [@leaveAnimation]="animationDirection"><h1>Lighting</h1></div>
+  <div class="page-blade" *ngIf="selectedDestination === 'shades'" [@leaveAnimation]="animationDirection"><h1>Shades</h1></div>
+  <div class="page-blade" *ngIf="selectedDestination === 'settings'" [@leaveAnimation]="animationDirection"><h1>Settings</h1></div> -->
+  <div class="page-blade home-blade" [@fadeOut]><h1>Home</h1></div>
+  <div class="page-blade lighting-blade" [@fadeOut]><h1>Lighting</h1></div>
+  <div class="page-blade shade-blade" [@fadeOut]><h1>Shades</h1></div>
+  <div class="page-blade settings-blade" [@fadeOut]><h1>Settings</h1></div>
 </div>

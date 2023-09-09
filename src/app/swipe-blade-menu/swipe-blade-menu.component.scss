@@ -14,5 +14,26 @@
     width: 90%;
     height: 96%;
     background-color: $surfaceColour;
+    box-shadow: $onSurfaceShadow;
+    color: $onSurfaceColour;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.home-blade {
+    transform: translateX(0);    
+}
+
+.lighting-blade {
+    transform: translateX(110%);
+}
+
+.shade-blade {    
+    transform: translateX(220%);
+}
+
+.settings-blade {    
+    transform: translateX(330%);
 }

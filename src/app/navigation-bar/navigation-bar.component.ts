@@ -8,8 +8,8 @@ import { DestinationService } from '../destination.service';
   styleUrls: ['./navigation-bar.component.scss'],
   animations: [
     trigger('slideDown', [
-      state('show', style({ transform: 'translateY(0%)' })),
-      state('hide', style({ transform: 'translateY(140%)' })),
+      state('show', style({ transform: 'translateY(-20px)' })),
+      state('hide', style({ transform: 'translateY(150px)' })),
       transition('show <=> hide', animate('0.3s ease')),
     ]),
   ],

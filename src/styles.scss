@@ -34,7 +34,13 @@ $Crestron-Demo-Angular-theme: mat.define-light-theme((
 @include mat.all-component-themes($Crestron-Demo-Angular-theme);
 
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior: none; /* Stop annoying iphone browser elastic nonsense */
+}
+
 body {
+    position: relative;
     margin: 0;
     padding: 0;
   }
@@ -44,24 +50,27 @@ body {
 }
 
 // Area Colours
-$primaryColour: #FAFAFF;
-$primaryVariant: #17BEBB;
-$secondaryColour: #FF6F59;
-$secondaryVariant: #A5B452;
+$primaryColour: #353b48;//#FAFAFF; /* This is colour for main navigation etc... */
+$primaryVariant: #17BEBB; /* Backup colour for main navigation */
+$secondaryColour: #FAFAFF; //#F28482 /* Highlight colour for main navigation, buttons and floating actions */
+$secondaryVariant: #5FB49C;//#FF6F59; /* Backup Highlight colour for main navigation, buttons and floating actions */
 $errorColour: #ff2200;
 
-$backgroundColour: #50514F; //#FAFAFF
-$surfaceColour: #353b48;
+$backgroundColour: #111111; //#FAFAFF
+$surfaceColour: #333333;
+//$navBarColour: #353b48;
 
 // Colours On Areas
 $onPrimaryColour: #000000;
 $onSecondaryColour: #000000;
-$onBackgroundColour: #000000;
-$onSurfaceColour: #000000;
+$onSecondaryVariantColour: #FFFFFF;
+$onBackgroundColour: #FFFFFF;
+$onSurfaceColour: #FFFFFF;
 $onErrorColour: #000000;
 
 // Shadows
-$onBackgroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+$onBackgroundShadow: 7px 5px 10px rgba(255, 255, 255, 0.5);
+$onSurfaceShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
 $onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
 
 .material-symbols-outlined {

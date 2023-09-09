@@ -14,23 +14,24 @@
 
 .nav-bar {
     width: 680px;
-    background-color: $surfaceColour;
+    will-change: transform;
+    background-color: $primaryColour;
     height: 80px;
     z-index: 5;
-    box-shadow: $onBackgroundShadow;
+    box-shadow: $onSurfaceShadow;
     border-radius: 8px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    transition: transform 0.3s ease; 
+    //transition: transform 0.3s ease; /* If I include this all is fine except ios, which has a wobble */
 }
 
 .nav-bar-button {
     height: 64px;
     width: 140px;
     box-shadow: $onForegroundShadow;
-    background-color: $primaryColour;
-    color: $onPrimaryColour;
+    background-color: $secondaryColour;
+    color: $onSecondaryColour;
     border-radius: 4px;
     display: flex;
     justify-content: center;
@@ -39,8 +40,8 @@
 
 .nav-bar-button:active {
     transform: scale(0.9);
-    background-color: $secondaryColour;
-    color: $onSecondaryColour;
+    background-color: $secondaryVariant;
+    color: $onSecondaryVariantColour;
 }
 
 .nav-bar-button .element-text {
