@@ -8,13 +8,15 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { LightingControlsComponent } from './lighting-controls/lighting-controls.component';
+import { LightingPageComponent } from './lighting-page/lighting-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SwipeBladeMenuComponent,
     NavigationBarComponent,
-    LightingControlsComponent
+    LightingControlsComponent,
+    LightingPageComponent
   ],
   imports: [
     BrowserModule,
