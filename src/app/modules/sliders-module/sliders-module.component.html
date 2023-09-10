@@ -1,0 +1,8 @@
+<div class="sliders-area ui-modules-area">
+    <ng-container *ngFor="let sliderItem of data">
+        <app-slider-element
+          [labelKey]="sliderItem.labelKey"
+          [initialValue]="sliderItem.initialValue"
+        ></app-slider-element>
+      </ng-container>
+</div>

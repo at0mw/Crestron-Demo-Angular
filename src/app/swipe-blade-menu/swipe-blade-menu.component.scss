@@ -13,12 +13,14 @@
 .page-blade {
     width: 90%;
     height: 96%;
-    background-color: $surfaceColour;
-    box-shadow: $onSurfaceShadow;
+    //background-color: $surfaceColour;
+    // box-shadow: $onSurfaceShadow;
     color: $onSurfaceColour;
     border-radius: 8px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
     position: absolute;
 }
 
@@ -37,3 +39,9 @@
 .settings-blade {    
     transform: translateX(330%);
 }
+
+@media (max-width: 700px) {
+    .page-blade {
+        overflow-y: scroll;
+    }
+  }

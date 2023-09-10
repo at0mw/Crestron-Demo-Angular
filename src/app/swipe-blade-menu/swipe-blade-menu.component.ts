@@ -37,47 +37,47 @@ export class SwipeBladeMenuComponent {
     return 'translateLeft';
   }
 
-  @HostListener('window:touchstart', ['$event'])
-  onTouchStart(event: TouchEvent): void {
-    this.lastTouchX = event.touches[0].clientX;
-    //console.log("Position: ", this.lastTouchX);
-  }
+  // @HostListener('window:touchstart', ['$event'])
+  // onTouchStart(event: TouchEvent): void {
+  //   this.lastTouchX = event.touches[0].clientX;
+  //   //console.log("Position: ", this.lastTouchX);
+  // }
 
-  @HostListener('window:touchmove', ['$event'])
-  onTouchMove(event: TouchEvent): void {
-    const currentTouchX = event.touches[0].clientX;
-    const deltaX = currentTouchX - this.lastTouchX;
-    //console.log(currentTouchX);
-    if (deltaX < -this.swipeThreshold) { 
-      //console.log("Position: Last: ", this.lastTouchX, " Current: ", currentTouchX);     
-      this.navigateRight(currentTouchX);
-    } else if (deltaX > this.swipeThreshold) {
-      //console.log("Position: Last: ", this.lastTouchX, " Current: ", currentTouchX);     
-      this.navigateLeft(currentTouchX);
-    }
-  }
+  // @HostListener('window:touchmove', ['$event'])
+  // onTouchMove(event: TouchEvent): void {
+  //   const currentTouchX = event.touches[0].clientX;
+  //   const deltaX = currentTouchX - this.lastTouchX;
+  //   //console.log(currentTouchX);
+  //   if (deltaX < -this.swipeThreshold) { 
+  //     //console.log("Position: Last: ", this.lastTouchX, " Current: ", currentTouchX);     
+  //     this.navigateRight(currentTouchX);
+  //   } else if (deltaX > this.swipeThreshold) {
+  //     //console.log("Position: Last: ", this.lastTouchX, " Current: ", currentTouchX);     
+  //     this.navigateLeft(currentTouchX);
+  //   }
+  // }
 
-  // TODO - Might need to offset by move
-  private navigateRight(currentTouchX : any) {
-    const index = this.pageNames.indexOf(this.currentPosition);
-    //console.log("Swiping Right......", index);
-    this.lastTouchX = currentTouchX;
+  // // TODO - Might need to offset by move
+  // private navigateRight(currentTouchX : any) {
+  //   const index = this.pageNames.indexOf(this.currentPosition);
+  //   //console.log("Swiping Right......", index);
+  //   this.lastTouchX = currentTouchX;
 
-    // Increment the index by 1 if it's less than the maximum index
-    if (index < this.pageNames.length - 1) {
-      this.currentPosition = this.pageNames[index + 1];
-    }
-    this.updateDirection(this.currentPosition);
-  }
+  //   // Increment the index by 1 if it's less than the maximum index
+  //   if (index < this.pageNames.length - 1) {
+  //     this.currentPosition = this.pageNames[index + 1];
+  //   }
+  //   this.updateDirection(this.currentPosition);
+  // }
 
-  private navigateLeft(currentTouchX : any) {
-    const index = this.pageNames.indexOf(this.currentPosition);
-    //console.log("Swiping Left......", index);
-    this.lastTouchX = currentTouchX;
+  // private navigateLeft(currentTouchX : any) {
+  //   const index = this.pageNames.indexOf(this.currentPosition);
+  //   //console.log("Swiping Left......", index);
+  //   this.lastTouchX = currentTouchX;
 
-    if (index > 0) {
-      this.currentPosition = this.pageNames[index - 1];
-    }
-    this.updateDirection(this.currentPosition);
-  }
+  //   if (index > 0) {
+  //     this.currentPosition = this.pageNames[index - 1];
+  //   }
+  //   this.updateDirection(this.currentPosition);
+  // }
 }

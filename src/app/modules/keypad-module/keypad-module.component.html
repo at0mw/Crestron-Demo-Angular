@@ -1,0 +1,3 @@
+<div class="keypad-area ui-modules-area">
+    <div *ngFor="let button of buttons" class="keypad-button inpage-button" (touchstart)="buttonPressed(button)">{{ button }}</div>
+</div>

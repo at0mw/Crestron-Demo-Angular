@@ -1,0 +1,23 @@
+@import '../../../styles.scss';
+
+.keypad-area {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+.keypad-button {
+    width: 90px;
+    height: 80px;
+    font-size: 16px;
+}
+
+@media (max-width: 700px) {
+    .keypad-button {
+        width: 80%;
+        height: 60px;
+        font-size: 16px;
+    }
+}

@@ -8,8 +8,8 @@ import { DestinationService } from '../destination.service';
   styleUrls: ['./navigation-bar.component.scss'],
   animations: [
     trigger('slideDown', [
-      state('show', style({ transform: 'translateY(-20px)' })),
-      state('hide', style({ transform: 'translateY(150px)' })),
+      state('show', style({ transform: 'translateX(0)' })),
+      state('hide', style({ transform: 'translateX(-150%)' })),
       transition('show <=> hide', animate('0.3s ease')),
     ]),
   ],
@@ -17,7 +17,7 @@ import { DestinationService } from '../destination.service';
 export class NavigationBarComponent {
   navBarState: 'show' | 'hide' = 'hide';  
   private lastTouchY = 0;
-  private swipeUpThreshold = 50;
+  private swipeInThreshold = 50;
   private isNavBarVisible = false;
   private hideNavBarTimer: any;
 
@@ -25,19 +25,24 @@ export class NavigationBarComponent {
 
   @HostListener('touchstart', ['$event'])
   onTouchStart(event: TouchEvent): void {
-    this.lastTouchY = event.touches[0].clientY;
+    this.lastTouchY = event.touches[0].clientX;
     this.isNavBarVisible = true;
   }
 
   @HostListener('touchmove', ['$event'])
   onTouchMove(event: TouchEvent): void {
-    const currentTouchY = event.touches[0].clientY;
+    const currentTouchY = event.touches[0].clientX;
     const deltaY = currentTouchY - this.lastTouchY;
 
+    console.log("Current Touch: ", currentTouchY, " Last Touch: ", this.lastTouchY);
     // Check if the swipe is upwards and exceeds the threshold
-    if (deltaY < -this.swipeUpThreshold) {
+    if (deltaY > this.swipeInThreshold) {
+      console.log("Showing Nav Bar");
       this.navBarState = 'show';
-    } else {
+      this.lastTouchY = currentTouchY;
+      // Hide bad if swiped in, could be hide if pressed outside bar?
+    } else if (deltaY < -this.swipeInThreshold){
+      console.log("Hiding Nav Bar");
       this.navBarState = 'hide';
     }
   }

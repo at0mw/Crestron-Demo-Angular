@@ -56,12 +56,12 @@ $secondaryColour: #FAFAFF; //#F28482 /* Highlight colour for main navigation, bu
 $secondaryVariant: #5FB49C;//#FF6F59; /* Backup Highlight colour for main navigation, buttons and floating actions */
 $errorColour: #ff2200;
 
-$backgroundColour: #111111; //#FAFAFF
-$surfaceColour: #333333;
+$backgroundColour: #333333; //#FAFAFF
+$surfaceColour: #111111;
 //$navBarColour: #353b48;
 
 // Colours On Areas
-$onPrimaryColour: #000000;
+$onPrimaryColour: #FAFAFF;
 $onSecondaryColour: #000000;
 $onSecondaryVariantColour: #FFFFFF;
 $onBackgroundColour: #FFFFFF;
@@ -70,8 +70,38 @@ $onErrorColour: #000000;
 
 // Shadows
 $onBackgroundShadow: 7px 5px 10px rgba(255, 255, 255, 0.5);
-$onSurfaceShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+$onSurfaceShadow: 8px 6px 10px rgba(0, 0, 0, 0.5);
+$onSurfacePressedShadow: 4px 3px 10px rgba(0, 0, 0, 0.5);
 $onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
+
+.ui-modules-area {
+  height: 400px;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  //background-color: red;
+  background-color: $surfaceColour;
+  box-shadow: $onSurfaceShadow;
+  color: $onSurfaceColour;
+  border-radius: 4px;
+}
+
+.inpage-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondaryColour;
+  color: $onSecondaryColour;
+  border-radius: 4px;
+  box-shadow: $onSurfaceShadow;
+}
+
+.inpage-button:active {
+  background-color: $secondaryVariant;
+  color: $onSecondaryVariantColour;
+  transform: scale(0.9);
+  box-shadow: $onSurfacePressedShadow;
+}
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -82,3 +112,21 @@ $onForegroundShadow: 7px 5px 10px rgba(0, 0, 0, 0.5);
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.control-area {
+  display: flex;
+}
+
+@media (max-width: 700px) {
+  .control-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    //max-width: 300px;
+  }
+
+  .ui-modules-area {
+    width: 90vw;
+    margin: 5% 0;
+  }
+}
