@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+
+import WebXPanel, {WebXPanelConfigParams, isActive} from "@crestron/ch5-webxpanel"; 
+import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +17,19 @@ import { ShadeControlsComponent } from './control-areas/shade-controls/shade-con
 import { SlidersModuleComponent } from './modules/sliders-module/sliders-module.component';
 import { FormsModule } from '@angular/forms';
 import { SliderElementComponent } from './elements/slider-element/slider-element.component';
+import { APP_BASE_HREF } from '@angular/common';
+
+const configuration: Partial<WebXPanelConfigParams> = { 
+    host: 'ip_address | hostname', // defaults to window.location.host
+    ipId: '3|0x03', // string representing a hex value. Might contain "0x" or not. Defaults to "0x03"
+    roomId: 'virtual_control_room_id', // defaults to empty string
+}; 
+
+const webXPanelFactory = () => () => {
+  if (isActive) { 
+    WebXPanel.initialize(configuration); 
+  } 
+} 
 
 @NgModule({
   declarations: [
@@ -36,7 +51,11 @@ import { SliderElementComponent } from './elements/slider-element/slider-element
     MatIconModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: APP_INITIALIZER, useFactory: webXPanelFactory, multi: true },
+    {provide: APP_BASE_HREF, useValue: './'}
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { DestinationService } from '../destination.service';
+import { DestinationService } from '../services/destination.service';
 
 @Component({
   selector: 'app-navigation-bar',

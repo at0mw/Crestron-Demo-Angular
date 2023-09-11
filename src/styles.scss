@@ -121,12 +121,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .control-area {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    //width: 100%;
     //max-width: 300px;
   }
 
   .ui-modules-area {
-    width: 90vw;
-    margin: 5% 0;
+    width: 80vw;
+    margin: 5% auto;
   }
 }
