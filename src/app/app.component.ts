@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
       roomId: 'virtual_control_room_id',
     };
 
+    console.log("Attempting to initialise web xpanel...");
     this.webXPanelService.initializeWebXPanel(configuration);
 
     // Listen for the onConnect event
